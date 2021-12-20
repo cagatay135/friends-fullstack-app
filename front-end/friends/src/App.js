@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function App() {
   const [friends, setFriends] = useState([]);
   useEffect(() => {
-    const data = axios.get("http://localhost:8000").then((res) => {
+    const data = axios.get("http://localhost:8000/character/").then((res) => {
       setFriends(res.data);
     });
   }, []);
@@ -29,9 +29,7 @@ function App() {
               <i><h1 className="display-2">
                 Friends TV Show API
               </h1>
-              <nav>
-              <Link to="/">Home</Link> |{" "}
-            </nav>
+
               </i>
             </div>
           </section>
@@ -55,7 +53,7 @@ function App() {
                     {/*
                     {  
                     friend.quotes.length > 0 &&            
-                    <iframe width="560" height="315" src={`https://www.youtube.com/embed/${refactor(friend.quotes.length > 0 ? friend.quotes[0].video : null)}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src={`https://www.youtube.com/embed/${refactor(friend.quotes.length > 0 ? friend.quotes[0].video : null)}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     }
                     */}
                     <p className="card-text">Quotes : 

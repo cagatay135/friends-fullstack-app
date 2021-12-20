@@ -1,12 +1,15 @@
-from django.urls import path
+from django.urls import path, include
 from . import views 
+from rest_framework import routers, permissions
+
+
+from .views import CharacterViewSet, QuoteViewSet
+
+# We are registering our viewset(controllers) to the routers
+router = routers.DefaultRouter()
+router.register(r'character', CharacterViewSet)
+router.register(r'quote', QuoteViewSet)
 
 urlpatterns = [
-    path('', views.CharacterListCreateAPIView.as_view()),
-    path('<int:pk>/', views.ChracterDetailAPIView.as_view(), name='character-detail'),
-    path('<int:pk>/quotes', views.QuoteListAPIView.as_view(), name='quotes'),
-
-
-    # path('makaleler', views.makale_list_create_api_view),
-    # path('makaleler/<int:id>', views.makale_detail_api_view),
+    path('', include(router.urls)),
 ]
