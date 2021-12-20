@@ -50,12 +50,6 @@ function App() {
                     <p><strong>”{friend.most_used_word}”</strong></p>
                     <p>Nickname : {friend.nickname}</p>
                     <p className="card-text">Portrayed By : {friend.portrayed_by}</p>
-                    {/*
-                    {  
-                    friend.quotes.length > 0 &&            
-                    <iframe width="560" height="315" src={`https://www.youtube.com/embed/${refactor(friend.quotes.length > 0 ? friend.quotes[0].video : null)}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    }
-                    */}
                     <p className="card-text">Quotes : 
                     <Link to={{ pathname: `detail/${friend.id}`}}> Go to Quotes</Link>
                     </p>
